@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ready? | The Snack Shack</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="order.js"></script>
+</head>
+<body class="order-page">
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">SS</span><span>The Snack Shack</span></a><a class="pickup-chip" href="index.html">← Back to menu</a></header>
+  <main class="order-main">
+    <a class="back-link" href="index.html">← Change my snacks</a>
+    <p class="eyebrow">Almost snack time</p>
+    <h1>Ready?</h1>
+    <p class="order-intro">Tell us where to find you. We’ll have your order ready outside Room 104 during lunch.</p>
+    <form class="order-form" id="orderForm">
+      <label for="studentName">Your name<input id="studentName" name="studentName" autocomplete="name" required placeholder="e.g. Alex Kim" /></label>
+      <label for="roomNumber">Room number<input id="roomNumber" name="roomNumber" required inputmode="numeric" placeholder="e.g. 204" /></label>
+      <label for="grade">Grade<select id="grade" name="grade" required><option value="" selected disabled>Select grade</option><option>6th</option><option>7th</option><option>8th</option><option>9th</option><option>10th</option><option>11th</option><option>12th</option></select></label>
+      <div class="order-summary"><div><span>Your snacks</span><strong id="summaryItems">—</strong></div><div><span>Total to bring</span><strong id="summaryTotal">$0.00</strong></div></div>
+      <button class="checkout-button" type="submit">Send my order</button>
+      <p class="fine-print">No account needed. We only use this to find your order at lunch.</p>
+    </form>
+  </main>
+  <div class="order-success" id="orderSuccess" role="dialog" aria-modal="true" hidden><div class="success-card"><div class="success-icon">✓</div><p class="eyebrow">Order saved</p><h2>You’re all set.</h2><p id="successMessage"></p><div class="confirmation-details"><span>Pickup</span><strong>Outside Room 104 · 12:10–12:35</strong><span>Bring</span><strong id="successTotal">$0.00</strong></div><a class="checkout-button done-link" href="index.html">Back to menu</a></div></div>
+</body>
+</html>
