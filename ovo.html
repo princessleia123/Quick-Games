@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OvO — QuickPlay</title>
+  <link rel="stylesheet" href="game-page.css">
+  <style>.ovo-canvas{height:auto;min-height:0;background:#9ed6ed;padding:0}.ovo-canvas canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;touch-action:none}.ovo-controls{display:flex;justify-content:center;gap:12px;margin-top:24px}.ovo-control{min-width:62px;padding:12px 17px;border:2px solid #fff;background:#171717;color:#fff;font-weight:900;box-shadow:0 4px #000;touch-action:none}.ovo-control.jump{background:#ff5b35}.ovo-control:active,.ovo-control.is-held{transform:translateY(3px);box-shadow:0 1px #000}.ovo-help{display:flex;justify-content:space-between;gap:15px;color:#aaa;font-size:12px;margin-top:13px}.ovo-help p{margin:0}@media(max-width:600px){.ovo-help{display:block}.ovo-help p+p{margin-top:6px}}</style>
+</head>
+<body data-game="ovo">
+  <header class="game-top"><a class="back" href="index.html">← QUICKPLAY</a><a href="index.html">OVO</a><span class="controls">FAST MODE · 11 ROUNDS</span></header>
+  <main class="game-wrap">
+    <section class="game-box">
+      <div class="game-heading"><h1>OvO</h1><p>Jump. Flip. Don’t stop.</p></div>
+      <div class="canvas ovo-canvas">
+        <canvas id="ovoGame" width="960" height="540" aria-label="OvO platform game"></canvas>
+        <div class="hud"><strong id="score">ROUND 1 / 11 · 0 COINS</strong><span id="status">RUN TO THE FLAG</span></div>
+        <button class="restart" id="restartOvo" type="button">Restart</button>
+      </div>
+      <div class="ovo-controls" aria-label="OvO touch controls"><button class="ovo-control" data-key="left" type="button">←</button><button class="ovo-control jump" data-key="jump" type="button">JUMP</button><button class="ovo-control" data-key="right" type="button">→</button></div>
+      <div class="ovo-help"><p>A / D or ← / → move · W / ↑ / Space double jump</p><p>↓ smashes through thin floors</p></div>
+    </section>
+  </main>
+  <script src="points.js"></script>
+  <script src="ovo-game.js?v=5"></script>
+</body>
+</html>

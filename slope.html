@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Slope — Quick Games</title>
+  <link rel="stylesheet" href="slope-game.css?v=4">
+</head>
+<body>
+  <header class="slope-topbar">
+    <a class="slope-back" href="index.html">← QUICK GAMES</a>
+    <strong>SLOPE</strong>
+    <span>3D ENDLESS RUN</span>
+  </header>
+  <main class="slope-page">
+    <section class="slope-heading">
+      <div><p>NEON RUNNER · NO FINISH LINE</p><h1>Stay on<br><em>the slope.</em></h1></div>
+      <div class="slope-best"><small>BEST SCORE</small><strong id="bestScore">0</strong></div>
+    </section>
+    <section class="slope-stage">
+      <canvas id="slopeGame" width="960" height="560" aria-label="Slope 3D ball game" tabindex="0"></canvas>
+      <div class="slope-hud"><div><small>SCORE</small><strong id="slopeScore">0</strong></div><div><small>SPEED</small><strong id="slopeSpeed">1.0x</strong></div></div>
+      <div class="slope-status" id="slopeStatus">A / D or ← / → to steer</div>
+      <div class="slope-pad"><button data-slope-key="left" aria-label="Steer left">←</button><button data-slope-key="right" aria-label="Steer right">→</button></div>
+      <div class="slope-start" id="slopeStart"><p>3D ENDLESS RUN</p><h2>Ready to roll?</h2><span>Use A / D or the arrow keys to steer the rolling ball.</span><button id="slopeStartButton" type="button">START RUN</button></div>
+      <div class="slope-result" id="slopeResult" hidden><p>RUN OVER</p><h2 id="slopeResultTitle">You fell off.</h2><span id="slopeResultScore"></span><button id="slopeAgain" type="button">RUN AGAIN</button></div>
+    </section>
+    <p class="slope-help">Keep the ball on the track. Red blocks end your run. Speed rises the longer you survive.</p>
+  </main>
+  <script src="points.js"></script>
+  <script src="slope-game.js?v=5"></script>
+</body>
+</html>
