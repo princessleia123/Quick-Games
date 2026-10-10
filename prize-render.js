@@ -1,0 +1,1 @@
+const prizeTray=document.querySelector('.prizes');if(prizeTray){prizeTray.innerHTML='';const types=['teddy','koala','cub','elephant'];for(let i=0;i<18;i++){const prize=document.createElement('div');prize.className=`prize ${types[i%types.length]}`;prize.setAttribute('aria-label',`${types[i%types.length]} plush prize`);prizeTray.appendChild(prize)}}

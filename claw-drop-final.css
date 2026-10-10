@@ -1,0 +1,1 @@
+#machine.manual-drop #claw{animation:finalClawDrop 1.8s cubic-bezier(.35,.05,.55,1) forwards!important;top:34px!important}#machine.win #claw{animation:finalClawWin 1.8s cubic-bezier(.35,.05,.55,1) forwards!important}@keyframes finalClawDrop{0%{top:34px}58%{top:178px}100%{top:34px}}@keyframes finalClawWin{0%{top:34px}48%{top:178px}100%{top:34px}}

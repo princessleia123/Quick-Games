@@ -1,0 +1,184 @@
+.vending-mode {
+  position: relative;
+}
+
+.vend-dispenser {
+  min-width: 104px;
+  border: 3px solid #111;
+  border-radius: 5px;
+  padding: 9px 7px;
+  background: linear-gradient(#292533, #07070a);
+  box-shadow: 3px 3px 0 #241d29;
+  color: #fff;
+  cursor: pointer;
+  font: 700 8px 'DM Mono', monospace;
+  letter-spacing: .04em;
+  text-shadow: 0 0 5px #fff;
+}
+
+.vend-dispenser:disabled {
+  cursor: not-allowed;
+  opacity: .4;
+}
+
+.vend-dispenser:not(:disabled):active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #241d29;
+}
+
+.dispenser-light {
+  display: block;
+  width: 9px;
+  height: 9px;
+  margin: 0 auto 5px;
+  border-radius: 50%;
+  background: #35e6ff;
+  box-shadow: 0 0 10px #35e6ff;
+}
+
+.vend-congrats {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: #000;
+}
+
+.vend-congrats.show {
+  display: flex;
+  animation: screenIn .2s ease-out;
+}
+
+.congrats-panel {
+  display: grid;
+  width: 100%;
+  gap: 11px;
+  padding: 26px 14px;
+  border: 2px solid #ffd34d;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 211, 77, .35);
+}
+
+.congrats-stars {
+  color: #ffd34d;
+  font-size: 18px;
+}
+
+.congrats-panel strong {
+  color: #ffd34d;
+  font: 900 24px/1 'DM Mono', monospace;
+  letter-spacing: .04em;
+}
+
+.congrats-panel span:not(.congrats-stars),
+.congrats-panel small {
+  font: 700 10px 'DM Mono', monospace;
+  letter-spacing: .15em;
+}
+
+.congrats-panel b {
+  color: #fff;
+  font: 900 20px 'DM Mono', monospace;
+}
+
+.earned-plush {
+  --plush-color: #d59a6b;
+  position: relative;
+  width: 128px;
+  height: 112px;
+  margin: 4px auto 2px;
+  border: 4px solid #3b2a38;
+  border-radius: 48% 48% 42% 42%;
+  background: var(--plush-color);
+  box-shadow: inset 11px -13px 0 rgba(90, 48, 42, .14), 0 8px 0 rgba(0, 0, 0, .35);
+}
+
+.earned-plush::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: 13px;
+  top: -22px;
+  width: 38px;
+  height: 38px;
+  border: 4px solid #3b2a38;
+  border-radius: 50%;
+  background: var(--plush-color);
+  box-shadow: 60px 0 0 -4px var(--plush-color), 60px 0 0 0 #3b2a38;
+}
+
+.earned-plush::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: 21px;
+  top: 29px;
+  width: 78px;
+  height: 54px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 20px 15px, #fff 0 5px, #382b35 6px 12px, transparent 13px),
+    radial-gradient(circle at 58px 15px, #fff 0 5px, #382b35 6px 12px, transparent 13px),
+    radial-gradient(ellipse at 39px 36px, #fff0df 0 20px, transparent 21px);
+}
+
+.earned-plush.koala { --plush-color: #b7c5ca; }
+.earned-plush.elephant { --plush-color: #9bbce1; border-radius: 43% 43% 48% 48%; }
+.earned-plush.bunny { --plush-color: #dcb6e6; }
+.earned-plush.cub { --plush-color: #eab07b; }
+.earned-plush.pig { --plush-color: #f19bb4; }
+
+.earned-plush.elephant::before {
+  width: 48px;
+  height: 58px;
+  left: -12px;
+  top: 20px;
+  border-radius: 55% 40% 45% 55%;
+  box-shadow: 104px 0 0 -5px var(--plush-color), 104px 0 0 0 #3b2a38;
+}
+
+.earned-plush.elephant::after {
+  border-radius: 45%;
+}
+
+.earned-plush.bunny::before {
+  width: 27px;
+  height: 56px;
+  top: -43px;
+  left: 28px;
+  border-radius: 60% 60% 45% 45%;
+  box-shadow: 40px 0 0 -4px var(--plush-color), 40px 0 0 0 #3b2a38;
+}
+
+.congrats-panel small {
+  color: #aaa;
+  font-size: 9px;
+}
+
+@keyframes screenIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 430px) {
+  .vend-dispenser {
+    min-width: 88px;
+    padding: 9px 5px;
+  }
+}
+
+/* Keep the congratulations screen above every cabinet layer. */
+.vend-congrats {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+  background: #000 !important;
+}
+
+.vend-congrats.show {
+  display: flex !important;
+}

@@ -1,65 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Quick, fun browser games for busy students.">
-  <title>Quick Games / Arcade</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="slope-card.css">
-  <link rel="stylesheet" href="plain-purple.css">
-  <link rel="stylesheet" href="lighter-purple.css">
-  <link rel="stylesheet" href="home-hero.css">
-  <script src="points.js"></script>
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <a class="qp-mark" href="#home" aria-label="QuickPlay home">Q<span>P</span></a>
-      <div class="side-divider"></div>
-      <nav class="side-nav">
-        <a class="side-link active" href="#games" title="Arcade"><b>⌂</b><span>ARCADE</span></a>
-        <a class="side-link" href="#how" title="How to play"><b>?</b><span>GUIDE</span></a>
-        <a class="side-link" href="shop.html" title="Points shop"><b>◆</b><span>SHOP</span></a>
-        <button class="side-link" id="randomButton" title="Random game" type="button"><b>↯</b><span>RANDOM</span></button>
-      </nav>
-      <div class="side-bottom"><button class="side-icon" type="button" title="Settings">⚙</button><span class="version">QP<br>2.0</span></div>
-    </aside>
-
-    <div class="app-content">
-      <header class="appbar">
-        <div class="tab-strip"><span class="tab active">QUICKPLAY <i></i></span><span class="tab">ARCADE</span></div>
-        <div class="appbar-right"><span class="status"><i></i> SYSTEM READY</span><a class="points-wallet" href="shop.html">◆ <b id="pointsBalance">0</b> PTS</a><button class="circle-action" type="button">−</button><button class="circle-action" type="button">□</button><button class="circle-action close" type="button">×</button></div>
-      </header>
-
-      <main id="home">
-        <section class="dashboard-hero">
-          <div class="hero-copy">
-            <div class="crumb">QUICK GAMES <span>/</span> ARCADE</div>
-            <h1>Quick Games</h1>
-            <p>Fast games, simple rules, and instant play. Pick a game and jump right in.</p>
-            <div class="hero-actions"><a class="primary-action" href="#games">OPEN ARCADE <b>↗</b></a><span class="keyboard-hint">⌘ <b>QUICKPLAY</b></span></div>
-          </div>
-        </section>
-
-        <section class="arcade-section" id="games">
-          <div class="section-title"><div><span class="section-kicker">FEATURED ARCADE</span><h2>Choose your game</h2></div><span class="count">04 AVAILABLE</span></div>
-          <div class="game-grid">
-            <a class="game-tile tile-hole" href="hole.html"><div class="tile-top"><span>01 / ARCADE</span><b>HOT</b></div><div class="tile-art"><div class="art-grid"></div><div class="art-city"></div><div class="art-hole"></div><span class="art-caption">SWALLOW<br>THE CITY</span></div><div class="tile-info"><div><h3>Hole.io</h3><p>Grow bigger. Eat everything.</p></div><span class="tile-arrow">↗</span></div></a>
-            <a class="game-tile tile-among" href="among.html"><div class="tile-top"><span>02 / MYSTERY</span><b>CLUE</b></div><div class="tile-art"><div class="art-map"></div><div class="art-crewmate"></div><span class="art-caption">TRUST<br>NO ONE</span></div><div class="tile-info"><div><h3>Among Us</h3><p>Search the ship. Find the imposter.</p></div><span class="tile-arrow">↗</span></div></a>
-            <a class="game-tile tile-ovo" href="ovo.html"><div class="tile-top"><span>03 / PLATFORM</span><b>SKILL</b></div><div class="tile-art"><div class="art-ovo-lines"></div><div class="art-ovo"></div><span class="art-caption">RUN<br>AGAIN</span></div><div class="tile-info"><div><h3>OvO</h3><p>Jump, flip, reach the flag.</p></div><span class="tile-arrow">↗</span></div></a>
-            <a class="game-tile tile-slope" href="slope.html"><div class="tile-top"><span>04 / 3D RUN</span><b>NEW</b></div><div class="tile-art"><div class="slope-road-art"></div><div class="slope-ball-art"></div><span class="art-caption">DON’T<br>FALL</span></div><div class="tile-info"><div><h3>Slope</h3><p>Roll fast. Dodge red blocks.</p></div><span class="tile-arrow">↗</span></div></a>
-          </div>
-        </section>
-
-        <section class="guide-section" id="how">
-          <div class="guide-heading"><span class="section-kicker">HOW IT WORKS</span><h2>Built for the<br><strong>in-between.</strong></h2></div>
-          <div class="guide-list"><div><b>01</b><span><strong>Choose a tile</strong><small>Every game opens in its own tab.</small></span></div><div><b>02</b><span><strong>Play instantly</strong><small>No login, loading bar, or setup.</small></span></div><div><b>03</b><span><strong>Try one more time</strong><small>Short rounds make rematches easy.</small></span></div></div>
-        </section>
-      </main>
-      <footer><span>QUICK GAMES</span><span>FAST PLAY / NO DOWNLOAD</span><span>2026 / ONLINE</span></footer>
-    </div>
-  </div>
-</body>
-</html>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A playful task list that turns completed work into claw machine coins."><title>CoinQuest — Get stuff done. Win something fun.</title><link rel="stylesheet" href="task-arcade.css"><link rel="stylesheet" href="manual-controls.css"><link rel="stylesheet" href="prize-shapes.css"><link rel="stylesheet" href="machine-3d.css"><link rel="stylesheet" href="machine-depth.css"><link rel="stylesheet" href="selected-prize.css"><link rel="stylesheet" href="plush-grounding.css"><link rel="stylesheet" href="cabinet-reference.css"><link rel="stylesheet" href="plush-floor-lock.css"><link rel="stylesheet" href="hide-controls-hint.css"><link rel="stylesheet" href="back-plushies.css"><link rel="stylesheet" href="machine-full-3d.css"><link rel="stylesheet" href="plush-final-ground.css"><link rel="stylesheet" href="cabinet-depth-final.css"><link rel="stylesheet" href="arcade-cabinet-body.css"><link rel="stylesheet" href="claw-anchor-fix.css"><link rel="stylesheet" href="winner-display.css"><link rel="stylesheet" href="collection-case.css"><link rel="stylesheet" href="plush-variety.css"><link rel="stylesheet" href="plush-friendly.css"><link rel="stylesheet" href="plush-real.css"><link rel="stylesheet" href="plush-animals.css"><link rel="stylesheet" href="plush-reference-style.css"><link rel="stylesheet" href="selected-pickup.css"><link rel="stylesheet" href="claw-drop-final.css"><link rel="stylesheet" href="prize-drop-sequence.css"><link rel="stylesheet" href="door-interaction-fix.css"><link rel="stylesheet" href="daily-bonus.css"><link rel="stylesheet" href="prize-goal.css"><link rel="stylesheet" href="golden-glitter-goal.css"><link rel="stylesheet" href="remove-glass-wall.css"><link rel="stylesheet" href="machine-visibility-final.css"><link rel="stylesheet" href="purple-sheet-fix.css"><link rel="stylesheet" href="open-glass-fix.css"><link rel="stylesheet" href="glass-straight.css"><link rel="stylesheet" href="pocket-buddies.css"><link rel="stylesheet" href="plush-face-fix.css"><link rel="stylesheet" href="plush-face-clean.css"><link rel="stylesheet" href="plush-round-eyes.css"><link rel="stylesheet" href="plush-soft-face.css"><link rel="stylesheet" href="plush-ears.css"><link rel="stylesheet" href="prize-final-sequence.css"><link rel="stylesheet" href="collection-new-style.css"><link rel="stylesheet" href="door-reachable.css">
+<link rel="stylesheet" href="vending-machine.css?v=20261010c"><link rel="stylesheet" href="vending-dispenser.css?v=20261010c"></head>
+<body><div class="noise"></div>
+  <header class="topbar"><a class="brand" href="index.html"><span class="brand-star">✦</span> COIN<span>QUEST</span></a><div class="header-status"><span class="live-dot"></span> ARCADE ONLINE <span class="divider"></span> <span class="date" id="today"></span></div></header>
+  <main><section class="intro"><div class="eyebrow">YOUR DAILY SIDE QUEST</div><h1>Get stuff done.<br><em>Win something fun.</em></h1><p class="intro-copy">Turn your to-do list into play time. Every completed task earns a coin for the claw machine.</p><div class="stats-row"><div class="stat-card"><span class="stat-label">COINS READY</span><strong id="coinCount">0</strong><small>✦ to play</small></div><div class="stat-card"><span class="stat-label">QUESTS CLEARED</span><strong id="doneCount">0</strong><small>of <span id="totalCount">0</span> today</small></div><div class="streak-card"><span class="stat-label">CURRENT STREAK</span><strong id="streakCount">1</strong><small>days on a roll 🔥</small></div></div></section>
+    <section class="game-layout"><div class="tasks-panel panel"><div class="panel-head"><div><span class="eyebrow">MISSION CONTROL</span><h2>Today's quests</h2></div><span class="quest-count" id="questCount">0 ACTIVE</span></div><form class="add-task" id="taskForm"><input id="taskInput" type="text" maxlength="72" placeholder="Add a quest..." autocomplete="off" required><button type="submit">ADD <span>＋</span></button></form><div class="task-list" id="taskList"></div><div class="empty-state" id="emptyState"><span>✦</span><p>Your board is clear.<br>What will you conquer next?</p></div></div>
+      <div class="machine-wrap"><div class="machine panel" id="machine"><div class="machine-top"><span>PRIZE PARLOR</span><b>★ ★ ★</b></div><div class="marquee"><span>CLAW</span><strong>QUEST</strong><span>★</span></div><div class="glass"><div class="shine"></div><div class="claw-rail"></div><div class="claw" id="claw"><i></i><b></b><em></em></div><div class="prizes"><span>🍩</span><span>🦄</span><span>🧸</span><span>🪩</span><span>🍓</span><span>🐸</span></div><div class="floor"></div></div><div class="machine-controls"><div class="joystick"><i></i><b></b></div><div class="coin-slot"><span>INSERT COIN</span><b>✦</b></div><button id="playButton" type="button" disabled>PLAY<br><small>0 COINS</small></button></div><div class="machine-footer"><span>COMPLETE A QUEST TO EARN A COIN</span><span>PRIZE 01 / 06</span></div></div><div class="machine-guide"><span>← → MOVE</span><span>SPACE DROP</span><span>R CAMERA</span></div><p class="machine-note" id="machineNote">Finish a quest to unlock the machine.</p></div></section></main>
+  <footer><span>COINQUEST / 2026</span><span>SMALL WINS. BIG MOMENTUM.</span></footer><script src="machine-controls.js?v=20261010"></script><script src="task-arcade.js?v=20261010"></script><script src="input-fix.js?v=20261010"></script><script src="prize-render.js?v=20261010"></script><script src="arrow-controller.js?v=20261010"></script><script src="winner-display.js?v=20261010"></script><script src="collection-case.js?v=20261010"></script><script src="daily-bonus.js?v=20261010"></script><script src="emoji-clean.js?v=20261010"></script><script src="force-claw-motion.js?v=20261010"></script><script src="prize-drop-sequence.js?v=20261010"></script><script src="prize-goal.js?v=20261010"></script><script src="door-reachable.js?v=20261010"></script><script src="direct-drop-motion.js?v=20261010"></script><script src="drop-controls.js?v=20261010"></script><script src="button-drop-direct.js?v=20261010"></script><script src="vending-machine.js?v=20261010c"></script>
+</body></html>

@@ -1,0 +1,18 @@
+const KEY='coinquest-state';
+const starter=[{id:1,text:'Drink a glass of water',done:false},{id:2,text:'Send that one important email',done:false},{id:3,text:'Do a 10-minute reset',done:false}];
+const savedProgress=JSON.parse(localStorage.getItem(KEY)||'null');let state={tasks:starter.map(task=>({...task})),coins:Number(savedProgress?.coins||0),streak:1};
+const $=s=>document.querySelector(s); const save=()=>localStorage.setItem(KEY,JSON.stringify(state));
+let clawX=54, playing=false;
+
+function render(){
+  const list=$('#taskList'); list.innerHTML='';
+  state.tasks.forEach(task=>{const row=document.createElement('div');row.className=`task ${task.done?'completed':''}`;row.innerHTML=`<button class="check" aria-label="${task.done?'Uncomplete':'Complete'} task">${task.done?'✓':''}</button><span class="task-text"></span>${task.done?'<span class="earned">+1 COIN</span>':'<span class="task-tag">QUEST</span>'}<button class="delete" aria-label="Delete task">×</button>`;row.querySelector('.task-text').textContent=task.text;row.querySelector('.check').onclick=()=>{task.done=!task.done;state.coins+=task.done?1:-1;save();render()};row.querySelector('.delete').onclick=()=>{state.tasks=state.tasks.filter(item=>item.id!==task.id);save();render()};list.appendChild(row)});
+  const done=state.tasks.filter(task=>task.done).length;$('#coinCount').textContent=state.coins;$('#doneCount').textContent=done;$('#totalCount').textContent=state.tasks.length;$('#questCount').textContent=`${state.tasks.filter(task=>!task.done).length} ACTIVE`;$('#emptyState').hidden=state.tasks.length>0;$('#playButton').disabled=state.coins<1||playing;$('#playButton').innerHTML=`DROP<br><small>${state.coins} COIN${state.coins===1?'':'S'}</small>`;if(!playing)$('#machineNote').textContent=state.coins?'Use ← → to aim. Press DROP when ready.':'Complete a quest to load a coin.';
+}
+
+function moveClaw(direction){if(playing)return;clawX=Math.max(9,Math.min(86,clawX+direction*4));$('#claw').style.left=`${clawX}%`;$('#machineNote').textContent=state.coins?'Aim the claw, then press DROP.':'You can aim now — complete a quest before dropping.'}
+function drop(){if(!state.coins||playing)return;playing=true;const liveX=parseFloat($('#claw').dataset.position||clawX);const prizeIndex=Math.max(1,Math.min(6,Math.round((liveX-10)/15)+1));document.querySelectorAll('.prize').forEach(prize=>prize.classList.remove('selected-prize'));document.querySelector(`.prize:nth-child(${prizeIndex})`)?.classList.add('selected-prize');state.coins--;save();render();const machine=$('#machine');const claw=$('#claw');machine.classList.remove('manual-drop','win');void machine.offsetWidth;machine.classList.add('manual-drop');$('#machineNote').textContent='Dropping...';setTimeout(()=>{machine.classList.add('win');$('#machineNote').textContent='Congratulations! You won prize '+prizeIndex+'!';},1050);setTimeout(()=>{playing=false;machine.classList.remove('manual-drop','win');clawX=54;claw.style.left='54%';claw.dataset.position=54;render()},3100)}
+
+$('#taskForm').onsubmit=e=>{e.preventDefault();const input=$('#taskInput');if(!input.value.trim())return;state.tasks.push({id:Date.now(),text:input.value.trim(),done:false});input.value='';save();render();input.focus()};
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();moveClaw(-1)}if(e.key==='ArrowRight'){e.preventDefault();moveClaw(1)}if(e.code==='Space'||e.code==='Enter'){if(document.activeElement.tagName!=='INPUT'){e.preventDefault();drop()}}if(e.key.toLowerCase()==='r')$('#machine').classList.toggle('camera-mode')},true);
+$('#playButton').onclick=drop;$('#today').textContent=new Intl.DateTimeFormat('en-US',{weekday:'short',month:'short',day:'numeric'}).format(new Date()).toUpperCase();render();

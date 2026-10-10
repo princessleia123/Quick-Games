@@ -1,0 +1,1 @@
+.machine-wrap{position:relative!important}.machine-wrap>.prize-door{position:absolute!important;left:50%!important;bottom:-30px!important;z-index:300!important;pointer-events:auto!important}.machine-wrap>.prize-door.ready{bottom:-30px!important}.machine-wrap>.prize-door.open{bottom:-5px!important}.machine-wrap>.prize-door button{pointer-events:auto!important}
